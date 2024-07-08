@@ -91,9 +91,15 @@ def main():
     # loading dataset
     print("===> creating dataloaders ...")
     # 打印当前工作目录
-print("Current working directory:", os.getcwd())
+    print("Current working directory:", os.getcwd())
+    
     end = time.time()
-    data_loader = TextClassDataLoader('../data', batch_size=2)
+    # data_loader = TextClassDataLoader('../data', batch_size=2)
+
+    # 数据文件在 'data' 文件夹中
+    data_path = os.path.join(os.path.dirname(__file__), '../data')
+    data_loader = TextClassDataLoader(data_path, batch_size=2)
+    
     print('===> dataloader creatin: {t:.3f}'.format(t=time.time() - end))
     test_root = data_loader[0]
     test_bodytext = data_loader[1]
