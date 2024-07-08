@@ -4,6 +4,8 @@ from engine import *
 import random
 from util import *
 from sklearn.metrics import f1_score, recall_score, roc_auc_score, precision_score
+import os
+import numpy as np
 
 print("torch version :", torch.__version__)
 np.random.seed(0)
@@ -88,6 +90,8 @@ def main():
     ##################################################################################
     # loading dataset
     print("===> creating dataloaders ...")
+    # 打印当前工作目录
+print("Current working directory:", os.getcwd())
     end = time.time()
     data_loader = TextClassDataLoader('../data', batch_size=2)
     print('===> dataloader creatin: {t:.3f}'.format(t=time.time() - end))
