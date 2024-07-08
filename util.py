@@ -101,7 +101,12 @@ def start_embed(path):
 
 
 def TextClassDataLoader(path, batch_size):
-    re_files = np.load(path+'/remove.npy').tolist()
+    # re_files = np.load(path+'/remove.npy').tolist()
+    
+    # 确保路径是正确的相对路径
+    remove_path = os.path.join(path, 'remove.npy')
+    re_files = np.load(remove_path).tolist()
+    
     re_files.append('news_1146.txt')
     with open(path+'/ReCOVery/test.json') as f1:
         test_data = json.load(f1)
