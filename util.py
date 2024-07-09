@@ -108,13 +108,13 @@ def TextClassDataLoader(path, batch_size):
     re_files = np.load(remove_path).tolist()
     
     re_files.append('news_1146.txt')
-    with open(path+'/GossipCop/story_based_fake_test.json') as f1:
+    with open(path+'/GossipCop/test.json') as f1:
         test_data = json.load(f1)
         print("len of test: ", len(test_data))
-    with open(path+'/GossipCop/story_based_fake_train.json') as f2:
+    with open(path+'/GossipCop/train.json') as f2:
         train_data = json.load(f2)
         print("len of train: ", len(train_data))
-    with open(path+'/GossipCop/story_based_fake_val.json') as f3:
+    with open(path+'/GossipCop/val.json') as f3:
         val_data = json.load(f3)
         print("len of eval: ", len(val_data))
     print("total_number: ", len(test_data) + len(train_data) + len(val_data))
