@@ -127,11 +127,11 @@ def TextClassDataLoader(path, batch_size):
         news_id = test_data[i]['news_id']
         title = test_data[i]['title']
         reliability = test_data[i]['reliability']
-        if "news_" + str(int(news_id)+1) + ".txt" in re_files:
+        if "news_" + str(news_id+1) + ".txt" in re_files:
             continue
-        f_read1 = open(path+"/strtree_RST/news_" + str(int(news_id)+1) + ".txt", "r", encoding="iso-8859-1")
+        f_read1 = open(path+"/strtree_RST/news_" + str(news_id+1) + ".txt", "r", encoding="iso-8859-1")
         print("--------------------------------------------------------")
-        print("processing test news_" + str(int(news_id)+1) + ".txt")
+        print("processing test news_" + str(news_id+1) + ".txt")
         str2tree = f_read1.read()
         parse_tree = Tree.fromstring(str2tree)
         news_tree = ParentedTree.convert(parse_tree)
@@ -139,7 +139,7 @@ def TextClassDataLoader(path, batch_size):
 
         #getting all cfg
         test_dict={}
-        f_read2 = open(path+"/strtree_CGF/news_" + str(int(news_id)+1) + ".txt", "r", encoding="iso-8859-1")
+        f_read2 = open(path+"/strtree_CGF/news_" + str(news_id+1) + ".txt", "r", encoding="iso-8859-1")
         line_count = 1
         while True:
             str2tree = f_read2.readline()  # line
@@ -172,12 +172,12 @@ def TextClassDataLoader(path, batch_size):
         news_id = train_data[i]['news_id']
         title = train_data[i]['title']
         reliability = train_data[i]['reliability']
-        if "news_" + str(int(news_id)+1) + ".txt" in re_files:
+        if "news_" + str(news_id+1) + ".txt" in re_files:
             continue
 
-        f_read1 = open(path+"/strtree_RST/news_" + str(int(news_id)+1) + ".txt", "r", encoding="iso-8859-1")
+        f_read1 = open(path+"/strtree_RST/news_" + str(news_id+1) + ".txt", "r", encoding="iso-8859-1")
         print("--------------------------------------------------------")
-        print("processing training news_" + str(int(news_id)+1) + ".txt")
+        print("processing training news_" + str(news_id+1) + ".txt")
         str2tree = f_read1.read()
         parse_tree = Tree.fromstring(str2tree)
         news_tree = ParentedTree.convert(parse_tree)
@@ -186,7 +186,7 @@ def TextClassDataLoader(path, batch_size):
 
         # getting all cfg
         train_dict = {}
-        f_read2 = open(path + "/strtree_CGF/news_" + str(int(news_id)+1) + ".txt", "r", encoding="iso-8859-1")
+        f_read2 = open(path + "/strtree_CGF/news_" + str(news_id+1) + ".txt", "r", encoding="iso-8859-1")
         line_count = 1
         while True:
             str2tree = f_read2.readline()  # line
@@ -228,19 +228,19 @@ def TextClassDataLoader(path, batch_size):
         title = val_data[i]['title']
         reliability = val_data[i]['reliability']
 
-        if "news_" + str(int(news_id)+1) + ".txt" in re_files:
+        if "news_" + str(news_id+1) + ".txt" in re_files:
             continue
 
-        f_read1 = open(path+"/strtree_RST/news_" + str(int(news_id)+1) + ".txt", "r", encoding="iso-8859-1")
+        f_read1 = open(path+"/strtree_RST/news_" + str(news_id+1) + ".txt", "r", encoding="iso-8859-1")
         print("--------------------------------------------------------")
-        print("processing val news_" + str(int(news_id)+1) + ".txt")
+        print("processing val news_" + str(news_id+1) + ".txt")
         str2tree = f_read1.read()
         parse_tree = Tree.fromstring(str2tree)
         news_tree = ParentedTree.convert(parse_tree)
         f_read1.close()
         # getting all cfg
         val_dict = {}
-        f_read2 = open(path + "/strtree_CGF/news_" + str(int(news_id)+1) + ".txt", "r", encoding="iso-8859-1")
+        f_read2 = open(path + "/strtree_CGF/news_" + str(news_id+1) + ".txt", "r", encoding="iso-8859-1")
         line_count = 1
         while True:
             str2tree = f_read2.readline()  # line
