@@ -139,7 +139,7 @@ def main():
     recall = recall_score(np.array(ttt_label), np.array(ttt_pre), average=None)
     precision = precision_score(np.array(ttt_label), np.array(ttt_pre), average=None)
 
-    print(log.format(roc_auc_score(ttt_label, ttt_pre, average="weighted")), flush=True)
+    # print(log.format(roc_auc_score(ttt_label, ttt_pre, average="weighted")), flush=True)
     print('f1: ', f1)
     print('recall: ', recall)
     print('precesion: ', precision)
